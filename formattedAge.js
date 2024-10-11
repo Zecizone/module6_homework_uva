@@ -1,8 +1,8 @@
-export function less4() {
+export function formattedAge() {
   const name = prompt('Введите имя');
   const egeYear = prompt('Введите год рождения', 'Например:2000');
 
-  let egeNumber = parseInt(egeYear);
+  const egeNumber = parseInt(egeYear);
   const currentYear = new Date().getFullYear();
   const age = currentYear - egeNumber;
   const ageRemainder = age % 10;

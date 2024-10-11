@@ -1,4 +1,4 @@
-export function less65() {
+export function convertingArray() {
   const obj = {
     some: 'some',
     dom: 'text',

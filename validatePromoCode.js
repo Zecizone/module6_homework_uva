@@ -1,6 +1,6 @@
-export function less52() {
-    let promocode = prompt('Введите промкод');
-    let code = promocode.toLowerCase();
+export function validatePromoCode() {
+    const promocode = prompt('Введите промкод');
+    const code = promocode.toLowerCase();
     
     if (code === 'скидка') {
       alert('промокод применён');

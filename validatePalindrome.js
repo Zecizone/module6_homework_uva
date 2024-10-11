@@ -1,6 +1,6 @@
-export function less61() {
-  let str = prompt('Введите палиндром:')
-  let lowerStr = str.toLowerCase();
+export function validatePalindrome() {
+  const str = prompt('Введите палиндром:')
+  const lowerStr = str.toLowerCase();
   let newStr = ''
 
   for (let i = lowerStr.length - 1; i >= 0; i--) {

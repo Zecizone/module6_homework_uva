@@ -1,17 +1,14 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
-import { less1 } from './less_5-10-1.js'
-import { less52 } from './less_5-10-2.js'
-import { less3 } from './less_5-10-3.js'
-import { less4 } from './less_5-10-4.js'
-import { less5 } from './less_5-10-5.js'
-import { less61 } from './less_6-6-1.js'
-import { less62 } from './less_6-6-2.js'
-import { less63 } from './less_6-6-3.js'
-import { less64 } from './less_6-6-4.js'
-import { less65 } from './less_6-6-5.js'
+import { displayNumberProperties } from './displayNumberProperties.js'
+import { validatePromoCode } from './validatePromoCode.js'
+import { calculateAge } from './calculateAge.js'
+import { formattedAge } from './formattedAge.js'
+import { calculateCredit } from './calculateCredit.js'
+import { validatePalindrome } from './validatePalindrome.js'
+import { removeDuplicates } from './removeDuplicates.js'
+import { generateNumberArray } from './generateNumberArray.js'
+import { printTicTacToeBoard } from './printTicTacToeBoard.js'
+import { convertingArray } from './convertingArray.js'
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -25,14 +22,14 @@ document.querySelector('#app').innerHTML = `
       </ol>
       <p><b>Входные данные</b>: 3.</p>
       <p><b>Выходные данные</b>: 3, 9, 27</p>
-      <button id="counter1" type="button">Кликни чтобы запустить</button>
+      <button id="forNumberProperties" type="button">Кликни чтобы запустить</button>
 
       <h2>Задание 5.10.2</h2>
       <p>На сайте имеется поле для ввода промокода. Пользователь может заполнить его и получить скидку, если промокод верен.</p>
       <p>Ваша задача написать проверку для промокода: «скидка». Используйте&nbsp;<code>prompt()</code>&nbsp;для получения значений, а&nbsp;<code>alert()</code>&nbsp;для вывода фразы «Промокод применён» или «Промокод не работает». Учитывайте случаи когда пользователь может ввести «скиДка», «Скидка», «СКИДКА».</p>
       <p><b>Входные данны</b>е: СкиДкА</p>
       <p><b>Выходные данные</b>: Промокод применён</p>
-      <button id="counter52" type="button">Кликни чтобы запустить</button>
+      <button id="promoCodeValidation" type="button">Кликни чтобы запустить</button>
 
       <h2>Задание 5.10.3</h2>
       <p>
@@ -53,7 +50,7 @@ document.querySelector('#app').innerHTML = `
         <p>
         <b>Выходные данные:</b> Игорь: 23
         </p>
-      <button id="counter3" type="button">Кликни чтобы запустить</button>
+      <button id="ageCalculation" type="button">Кликни чтобы запустить</button>
 
       <h2>Задание 5.10.4</h2>
       <p>
@@ -71,7 +68,7 @@ document.querySelector('#app').innerHTML = `
       <p>
       <b>Выходные данные:</b> Игорь: 23 года
       </p>
-      <button id="counter4" type="button">Кликни чтобы запустить</button>
+      <button id="formattedAge" type="button">Кликни чтобы запустить</button>
 
       <h2>Задание 5.10.5</h2>
       <p>
@@ -95,7 +92,7 @@ document.querySelector('#app').innerHTML = `
             <li>если клиенту от 36 до 65, то ему одобрят максимум 1000000</li>
             <li>кредит могут выдавать суммами кратными 10000.</li>
           </ul>
-          <button id="counter5" type="button">Кликни чтобы рассчитать</button>
+          <button id="creditCalculation" type="button">Кликни чтобы рассчитать</button>
           </div>
 
       <h2>Задание 6.6.1</h2>
@@ -119,7 +116,7 @@ document.querySelector('#app').innerHTML = `
       <p>
       <b>Выходные данные</b>:&nbsp;Слово Сантимент не является палиндромом
       </p>
-      <button id="counter61" type="button">Кликни чтобы проверить</button>
+      <button id="palindromeValidation" type="button">Кликни чтобы проверить</button>
 
       <h2>Задание 6.6.2</h2>
         <p>
@@ -140,7 +137,7 @@ document.querySelector('#app').innerHTML = `
         </p>
         <pre>    [1, 2, 3, 5, 4, 'they', 'don\'t', 'know', 'that', 'we'];</pre>
         <h3 class="read-the-docs">Вывод алертом</h3>
-      <button id="counter62" type="button">Кликни чтобы запустить</button>
+      <button id="duplicateRemoval" type="button">Кликни чтобы запустить</button>
 
       <h2>Задание 6.6.3</h2>
       <p>
@@ -153,7 +150,7 @@ document.querySelector('#app').innerHTML = `
         Выходные данные:&nbsp;[0, 1, 2, 3, 4, 5]
       </p>
       <h3 class="read-the-docs">Вывод алертом</h3>
-      <button id="counter63" type="button">Кликни чтобы запустить</button>
+      <button id="numberArrayGeneration" type="button">Кликни чтобы запустить</button>
 
       <h2>Задание 6.6.4</h2>
       <p>
@@ -166,7 +163,7 @@ document.querySelector('#app').innerHTML = `
         x o x
       </p>
       <h3 class="read-the-docs">Вывод алертом</h3>
-      <button id="counter64" type="button">Кликни чтобы запустить</button>
+      <button id="ticTacToeBoardPrinting" type="button">Кликни чтобы запустить</button>
 
       <h2>Задание 6.6.5</h2>
       <p>
@@ -189,7 +186,7 @@ document.querySelector('#app').innerHTML = `
         Выходные данные:&nbsp;<code>["some", "text", 1, 2, 3, 4, 5, "there"]</code>
       </p>
       <h3 class="read-the-docs">Вывод алертом</h3>
-      <button id="counter65" type="button">Кликни чтобы запустить</button>
+      <button id="arrayConverting" type="button">Кликни чтобы запустить</button>
     
     <p class="read-the-docs text-align">
       Спасибо что проверили ^_^
@@ -197,50 +194,17 @@ document.querySelector('#app').innerHTML = `
   </div>
 `
 
-function setupLess1(button) {
-  button.addEventListener("click", less1);
-}
-function setupLess52(button) {
-  button.addEventListener("click", less52);
-}
-function setupLess3(button) {
-  button.addEventListener("click", less3);
-}
-function setupLess4(button) {
-  button.addEventListener("click", less4);
-}
-
-function setupLess5(button) {
-  button.addEventListener("click", less5);
-}
-
-function setupLess61(button) {
-  button.addEventListener("click", less61);
-}
-
-function setupLess62(button) {
-  button.addEventListener("click", less62);
-}
-
-function setupLess63(button) {
-  button.addEventListener("click", less63);
-}
-
-function setupLess64(button) {
-  button.addEventListener("click", less64);
-}
-
-function setupLess65(button) {
-  button.addEventListener("click", less65);
-}
-
-setupLess1(document.querySelector('#counter1'))
-setupLess52(document.querySelector('#counter52'))
-setupLess3(document.querySelector('#counter3'))
-setupLess4(document.querySelector('#counter4'))
-setupLess5(document.querySelector('#counter5'))
-setupLess61(document.querySelector('#counter61'))
-setupLess62(document.querySelector('#counter62'))
-setupLess63(document.querySelector('#counter63'))
-setupLess64(document.querySelector('#counter64'))
-setupLess65(document.querySelector('#counter65'))
+function setupEventListener(button, action) {
+    button.addEventListener("click", action);
+  }
+  
+  setupEventListener(document.querySelector('#forNumberProperties'), displayNumberProperties);
+  setupEventListener(document.querySelector('#promoCodeValidation'), validatePromoCode);
+  setupEventListener(document.querySelector('#ageCalculation'), calculateAge);
+  setupEventListener(document.querySelector('#formattedAge'), formattedAge);
+  setupEventListener(document.querySelector('#creditCalculation'), calculateCredit);
+  setupEventListener(document.querySelector('#palindromeValidation'), validatePalindrome);
+  setupEventListener(document.querySelector('#duplicateRemoval'), removeDuplicates);
+  setupEventListener(document.querySelector('#numberArrayGeneration'), generateNumberArray);
+  setupEventListener(document.querySelector('#ticTacToeBoardPrinting'), printTicTacToeBoard);
+  setupEventListener(document.querySelector('#arrayConverting'), convertingArray);

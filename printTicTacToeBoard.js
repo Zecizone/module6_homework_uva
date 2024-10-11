@@ -1,4 +1,4 @@
-export function less64() {
+export function printTicTacToeBoard() {
   let result = '';
   for (let i = 0; i < 3; i++) {
     let row = '';

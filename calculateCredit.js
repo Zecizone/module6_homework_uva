@@ -1,5 +1,5 @@
-export function less5() {
-  let age = prompt('Сколько вам полных лет?');
+export function calculateCredit() {
+  const age = prompt('Сколько вам полных лет?');
   let creditAmount;
 
   if (isNaN(age) || age < 0) {
